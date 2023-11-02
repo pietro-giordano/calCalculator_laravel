@@ -11,9 +11,10 @@ return new class extends Migration
        */
       public function up(): void
       {
-            Schema::create('ingredients', function (Blueprint $table) {
+            Schema::create('personal_ingredients', function (Blueprint $table) {
                   $table->id();
                   $table->string('name');
+                  $table->string('brand');
                   $table->longText('description')->nullable($value = true);
                   $table->binary('image')->nullable($value = true);
                   $table->decimal('calories_hundred_grams', $scale = 2);
@@ -23,6 +24,7 @@ return new class extends Migration
                   $table->decimal('saturated_fats_hundred_grams', $scale = 2);
                   $table->decimal('proteins_hundred_grams', $scale = 2);
                   $table->decimal('fibers_hundred_grams', $scale = 2)->nullable($value = true);
+                  $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
                   $table->timestamps();
             });
       }
@@ -32,6 +34,9 @@ return new class extends Migration
        */
       public function down(): void
       {
-            Schema::dropIfExists('ingredients');
+            Schema::table('personal_ingredients', function (Blueprint $table) {
+                  $table->dropForeign(['user_id']);
+            });
+            Schema::dropIfExists('personal_ingredients');
       }
 };
