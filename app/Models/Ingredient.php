@@ -10,6 +10,20 @@ class Ingredient extends Model
 {
       use HasFactory;
 
+      protected $fillable = [
+            'name',
+            'brand',
+            'description',
+            'image',
+            'calories_hundred_grams',
+            'carbs_hundred_grams',
+            'sugars_hundred_grams',
+            'fats_hundred_grams',
+            'saturated_fats_hundred_grams',
+            'proteins_hundred_grams',
+            'fibers_hundred_grams',
+      ];
+
       // relazione many to many con recipes
       public function ingredients(): BelongsToMany
       {

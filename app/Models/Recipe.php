@@ -11,6 +11,29 @@ class Recipe extends Model
 {
       use HasFactory;
 
+      protected $fillable = [
+            'name',
+            'description',
+            'image',
+            'calories_total',
+            'calories_hundred_grams',
+            'carbs_total',
+            'carbs_hundred_grams',
+            'sugars_total',
+            'sugars_hundred_grams',
+            'fats_total',
+            'fats_hundred_grams',
+            'saturated_fats_total',
+            'saturated_fats_hundred_grams',
+            'proteins_total',
+            'proteins_hundred_grams',
+            'fibers_total',
+            'fibers_hundred_grams',
+            'weight_total',
+            'servings',
+            'user_id',
+      ];
+
       // relazione many to one verso users
       public function user(): BelongsTo
       {
