@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\PersonalIngredient;
-use App\Http\Requests\StorePersonal_IngredientRequest;
-use App\Http\Requests\UpdatePersonal_IngredientRequest;
+use App\Http\Requests\StorePersonalIngredientRequest;
+use App\Http\Requests\UpdatePersonalIngredientRequest;
 
 class PersonalIngredientController extends Controller
 {
@@ -27,7 +27,7 @@ class PersonalIngredientController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePersonal_IngredientRequest $request)
+    public function store(StorePersonalIngredientRequest $request)
     {
         //
     }
@@ -51,7 +51,7 @@ class PersonalIngredientController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePersonal_IngredientRequest $request, PersonalIngredient $personal_Ingredient)
+    public function update(UpdatePersonalIngredientRequest $request, PersonalIngredient $personal_Ingredient)
     {
         //
     }
