@@ -15,15 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('brand');
-            $table->longText('description')->nullable($value = true);
-            $table->binary('image')->nullable($value = true);
+            $table->longText('description')->nullable();
+            $table->binary('image')->nullable();
             $table->decimal('calories_hundred_grams', $scale = 2);
             $table->decimal('carbs_hundred_grams', $scale = 2);
-            $table->decimal('sugars_hundred_grams', $scale = 2)->nullable($value = true);
+            $table->decimal('sugars_hundred_grams', $scale = 2)->nullable();
             $table->decimal('fats_hundred_grams', $scale = 2);
             $table->decimal('saturated_fats_hundred_grams', $scale = 2);
             $table->decimal('proteins_hundred_grams', $scale = 2);
-            $table->decimal('fibers_hundred_grams', $scale = 2)->nullable($value = true);
+            $table->decimal('fibers_hundred_grams', $scale = 2)->nullable();
             $table->timestamps();
         });
     }
