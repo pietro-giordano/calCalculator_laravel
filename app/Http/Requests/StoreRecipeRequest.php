@@ -41,6 +41,9 @@ class StoreRecipeRequest extends FormRequest
                   'fibers_hundred_grams' => 'nullable|decimal:2',
                   'weight_total' => 'required|decimal:2',
                   'servings' => 'nullable|integer',
+                  'personally_created' => 'required|boolean',
+                  'counter_views' => 'required|integer',
+                  'last_use' => 'required|timezone:all',
             ];
       }
 }

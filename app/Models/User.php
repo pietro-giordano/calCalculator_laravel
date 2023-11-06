@@ -50,9 +50,9 @@ class User extends Authenticatable
             return $this->hasMany(Recipe::class);
       }
 
-      // relazione one to many con personalIngredients
-      public function personalIngredients(): HasMany
+      // relazione one to many con ingredients
+      public function ingredients(): HasMany
       {
-            return $this->hasMany(PersonalIngredient::class);
+            return $this->hasMany(Ingredient::class);
       }
 }

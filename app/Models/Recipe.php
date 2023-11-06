@@ -31,6 +31,9 @@ class Recipe extends Model
             'fibers_hundred_grams',
             'weight_total',
             'servings',
+            'personally_created',
+            'counter_views',
+            'last_use',
             'user_id',
       ];
 

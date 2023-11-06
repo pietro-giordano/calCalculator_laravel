@@ -32,6 +32,9 @@ return new class extends Migration
                   $table->decimal('fibers_hundred_grams', $scale = 2)->nullable()->unsigned();
                   $table->decimal('weight_total', $scale = 2)->unsigned();
                   $table->integer('servings')->nullable()->unsigned();
+                  $table->boolean('personally_created')->default(true);
+                  $table->integer('counter_views')->default(1);
+                  $table->dateTime('last_use', $precision = 0);
                   $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
                   $table->timestamps();
             });

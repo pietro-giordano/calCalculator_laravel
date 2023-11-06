@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Ingredient extends Model
@@ -22,7 +23,17 @@ class Ingredient extends Model
             'saturated_fats_hundred_grams',
             'proteins_hundred_grams',
             'fibers_hundred_grams',
+            'personally_created',
+            'usage_counter',
+            'last_use',
+            'user_id',
       ];
+
+      // relazione many to one verso users
+      public function user(): BelongsTo
+      {
+            return $this->belongsTo(User::class);
+      }
 
       // relazione many to many con recipes
       public function ingredients(): BelongsToMany
