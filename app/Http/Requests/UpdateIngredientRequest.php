@@ -34,8 +34,6 @@ class UpdateIngredientRequest extends FormRequest
                   'proteins_hundred_grams' => 'required|decimal:2',
                   'fibers_hundred_grams' => 'nullable|decimal:2',
                   'personally_created' => 'required|boolean',
-                  'counter_views' => 'required|integer',
-                  'last_use' => 'required|timezone:all',
             ];
       }
 }
