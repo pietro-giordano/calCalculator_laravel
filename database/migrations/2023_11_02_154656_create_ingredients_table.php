@@ -26,7 +26,6 @@ return new class extends Migration
 			$table->decimal('fibers_hundred_grams', $scale = 2)->nullable()->unsigned();
 			$table->boolean('personally_created');
 			$table->integer('usage_counter')->default(0);
-			$table->dateTime('last_use', $precision = 0);
 			$table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
 			$table->timestamps();
 		});

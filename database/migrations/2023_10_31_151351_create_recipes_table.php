@@ -34,7 +34,6 @@ return new class extends Migration
                   $table->integer('servings')->nullable()->unsigned();
                   $table->boolean('personally_created')->default(true);
                   $table->integer('counter_views')->default(1);
-                  $table->dateTime('last_use', $precision = 0);
                   $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
                   $table->timestamps();
             });
