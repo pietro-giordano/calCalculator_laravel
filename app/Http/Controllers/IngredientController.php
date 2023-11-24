@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreIngredientRequest;
 use App\Models\Ingredient;
-use Error;
+use Exception;
 use Illuminate\Http\Request;
 
 class IngredientController extends Controller
@@ -24,15 +24,16 @@ class IngredientController extends Controller
       {
             try {
                   $data = $request->validated();
+                  $data['user_id'] = auth()->user()->id;
                   $newIngredient = Ingredient::create($data);
 
                   return response()->json([
                         'success' => true,
                         'code' => 200,
                         'message' => 'Ok',
-                        'order' => $newIngredient
+                        'ingredient' => $newIngredient
                   ]);
-            } catch (Error $e) {
+            } catch (Exception $e) {
                   return response()->json([
                         'success' => false,
                         'code' => $e->getCode(),
