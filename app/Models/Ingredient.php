@@ -36,7 +36,7 @@ class Ingredient extends Model
       }
 
       // relazione many to many con recipes
-      public function ingredients(): BelongsToMany
+      public function recipes(): BelongsToMany
       {
             return $this->belongsToMany(Recipe::class);
       }

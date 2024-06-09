@@ -14,7 +14,14 @@ class IngredientController extends Controller
        */
       public function index()
       {
-            //
+            $data = Ingredient::all();
+
+            return response()->json([
+                  'success' => true,
+                  'code' => 200,
+                  'message' => 'Ingredients received',
+                  'ingredients' => $data
+            ]);
       }
 
       /**
@@ -30,7 +37,7 @@ class IngredientController extends Controller
                   return response()->json([
                         'success' => true,
                         'code' => 200,
-                        'message' => 'Ok',
+                        'message' => 'Ingredient created',
                         'ingredient' => $newIngredient
                   ]);
             } catch (Exception $e) {
